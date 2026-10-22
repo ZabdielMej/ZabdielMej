@@ -1,27 +1,39 @@
 # Hi, I'm Zabdiel Mejía 👋
 
-**QA Automation Engineer who also ships product.** Playwright · TypeScript · React · Firebase.
+**QA Automation Engineer who also ships product.** Playwright · TypeScript · Python · React · Firebase.
 
-Senior QA Automation Engineer (9+ years) — currently consulting at number8, a Software Mind company, where the AI + QA combination is the job: AI-accelerated test authoring, automation frameworks from zero, and quality strategy for client teams.
+Senior QA Automation Engineer (9+ years), currently consulting at number8, a Software Mind company, where AI plus QA is the job: AI-accelerated test authoring, automation frameworks from zero, and quality strategy for client teams.
 
 ---
 
-## 🐾 GroomerSync — a production app, built and operated solo
+## 🐾 GroomerSync: a production app, built and operated solo
 
-A scheduling system that runs the day-to-day operations of a real pet-grooming shop — appointments, recurring bookings, client/pet records, SMS notifications, payroll commissions, and financial reports. **Live as the shop's system of record since July 2026.**
+The scheduling and operations system for a real pet-grooming shop in Los Angeles: appointments, recurring bookings, client and pet records, SMS, card payments on a Square Terminal, refunds and chargebacks, payroll commissions and financial reports. **Live as the shop's system of record since July 2026, used every day on the shop iPad.**
 
-- **Stack:** React 18 + TypeScript (strict) · Vite · Tailwind CSS · Firebase (Auth, Firestore, Cloud Functions) · Twilio SMS
-- **Multi-tenant Firestore data model** with default-deny security rules — and the rules are tested like code, against the emulator, in CI
-- **Recurring-appointment engine** with per-instance exceptions, edit-scope propagation, and end-of-month edge-case handling
-- **Four-layer test strategy:** 440+ Vitest unit tests · 96 Firestore security-rules tests · Playwright E2E · an AI-driven scenario suite that caught 7 real bugs before launch
-- **CI/CD:** GitHub Actions on every push — type-check, build, unit + emulator-backed rules tests
+- **Stack:** React 18 + TypeScript (strict) · Vite · Tailwind · Firebase (Auth, Firestore, Cloud Functions) · Twilio SMS · Square Terminal API
+- **Money paths built like money paths:** server-side refund caps and idempotency, dispute checks before every refund, fail-closed permissions, data changes written to an audit log
+- **Multi-tenant Firestore** with default-deny security rules, tested like code against the emulator
+- **Test strategy:** 1,800+ unit tests · 250+ security-rules tests · 480 Playwright touch tests on iPad and iPhone WebKit · emulator smoke suites · an AI-driven scenario suite run against staging
+- **150+ merged PRs**, staging and production on separate Firebase projects
 
-📖 **Full case study — architecture, testing strategy, screenshots:** [GroomerSync-Showcase](https://github.com/ZabdielMej/GroomerSync-Showcase)
-🔒 The source repo is private — it runs a real business with real customer data. **Happy to do a full code walkthrough or live demo on request.**
+📖 **Case study, architecture, screenshots:** [GroomerSync-Showcase](https://github.com/ZabdielMej/GroomerSync-Showcase)
+🔒 The source is private because it runs a real business with real customer data. **Happy to do a full code walkthrough or live demo in interviews.**
+
+## 🤖 How I build: AI agents under strict QA gates
+
+I direct AI coding agents (Claude Code) and treat their output the way a QA lead treats any team's work:
+
+1. **Stories first.** Every feature is split into small user stories with acceptance criteria and **named tests written before the code**.
+2. **Tests fail first, then pass.** Unit, rules, touch and smoke suites all green locally before anything is pushed.
+3. **Independent review.** Every PR goes through an automated code reviewer (Codex) round after round until it comes back clean.
+4. **CI only after review.** CI runs only once review is clean, which keeps Actions minutes down and makes every green build count.
+5. **I own the release.** Staging first, then production, with a deploy checklist and a rollback path.
+
+Recent catches by that process before they shipped: a refund that could exceed its cap after a network timeout, a refund that could go out while a chargeback was open, and a layout shift that only showed up on Linux fonts.
 
 ## 🎭 Playwright
 
-- [**Playwright-Demo-Sauce**](https://github.com/ZabdielMej/Playwright-Demo-Sauce) — a compact public demo of how I structure Playwright projects: TypeScript, Page Object Model, environment-driven config, and GitHub Actions CI with HTML-report artifacts.
+- [**Playwright-Demo-Sauce**](https://github.com/ZabdielMej/Playwright-Demo-Sauce): how I structure Playwright projects in TypeScript, with Page Object Model, environment-driven config and GitHub Actions CI with HTML report artifacts.
 
 ## 📫 Contact
 
